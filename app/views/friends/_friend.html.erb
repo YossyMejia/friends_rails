@@ -1,0 +1,44 @@
+<div id="<%= dom_id friend %>">
+  <thead>
+      <tr>
+      <td>
+        <strong>First name:</strong>
+        <%= friend.first_name %>
+      </td>
+
+      <td>
+        <strong>Last name:</strong>
+        <%= friend.last_name %>
+      </td>
+
+      <td>
+        <strong>Email:</strong>
+        <%= friend.email %>
+      </td>
+
+      <td>
+        <strong>Phone:</strong>
+        <%= friend.phone %>
+      </td>
+
+      <td>
+        <strong>Twitter:</strong>
+        <%= friend.twitter %>
+      </td>
+      <td>
+      <td>
+        <strong>User id:</strong>
+        <%= friend.user_id %>
+      </td>
+      <td>
+        <%= link_to "Show", friend %>
+      </td>
+      <td>
+        <%= link_to "Edit", edit_friend_path(friend) %>
+      </td>
+      <td>
+        <%= button_to "Destroy", friend, method: :delete, data: {confirm: 'ARE YOU SURE?' } %>
+      </td>
+    </tr>
+  </thead>
+</div>

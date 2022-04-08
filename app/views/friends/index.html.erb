@@ -1,0 +1,12 @@
+
+<h1>Friends</h1>
+
+<%# <div id="friends" style="background-color: red"> %>
+<table class="table table-sm">
+  <% @friends.each do |friend| %>
+    <%= render friend %>
+  <% end %>
+</table>
+<%# </div> %>
+
+<%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>

@@ -31,13 +31,13 @@
         <%= friend.user_id %>
       </td>
       <td>
-        <%= link_to "Show", friend %>
+        <%= link_to "Show", friend, class: "btn btn-info"%>
       </td>
       <td>
-        <%= link_to "Edit", edit_friend_path(friend) %>
+        <%= link_to "Edit", edit_friend_path(friend), class: "btn btn-secondary"%>
       </td>
       <td>
-        <%= button_to "Destroy", friend, method: :delete, data: {confirm: 'ARE YOU SURE?' } %>
+        <%= button_to "Destroy", friend, method: :delete, data: {confirm: 'ARE YOU SURE?' }, class: "btn btn-danger"%>
       </td>
     </tr>
   </thead>

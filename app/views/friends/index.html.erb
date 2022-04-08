@@ -1,12 +1,15 @@
 
-<h1>Friends</h1>
+<h1 style="margin-top: 2rem">
+  Friends 
+  <%= link_to "+", new_friend_path, class:"btn btn-secondary" %>
+</h1>
 
-<%# <div id="friends" style="background-color: red"> %>
+<div id="friends" style="margin-bottom: 2rem">
 <table class="table table-sm">
   <% @friends.each do |friend| %>
     <%= render friend %>
   <% end %>
 </table>
-<%# </div> %>
+</div>
 
-<%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>
+<%= link_to "Export friends list", new_friend_path, class:"btn btn-secondary" %>

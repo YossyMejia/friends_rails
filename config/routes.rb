@@ -1,5 +1,6 @@
 Rails.application.routes.draw do  
   resources :friends
+  
   devise_for :users
   get 'home/about'
   root 'home#index' #root page 

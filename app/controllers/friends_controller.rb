@@ -68,6 +68,10 @@ class FriendsController < ApplicationController
     redirect_to friends_path, notice: "Not Authorized to Edit this friend" if @friend.nil?
   end
 
+  def export_friends
+    p "Hola buenos dias"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_friend

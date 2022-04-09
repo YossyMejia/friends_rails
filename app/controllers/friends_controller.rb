@@ -1,8 +1,9 @@
 class FriendsController < ApplicationController
   before_action :set_friend, only: %i[ show edit update destroy ]
-
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+
+  helper_method :export_friends
 
   # GET /friends or /friends.json
   def index
@@ -11,7 +12,6 @@ class FriendsController < ApplicationController
 
   # GET /friends/1 or /friends/1.json
   def show
-    p "Holaaa"
   end
 
   # GET /friends/new
@@ -68,8 +68,17 @@ class FriendsController < ApplicationController
     redirect_to friends_path, notice: "Not Authorized to Edit this friend" if @friend.nil?
   end
 
-  def export_friends
+
+  def export_friends_data
+    @friends = Friend.all
+
+    p @friends[1]
     p "Hola buenos dias"
+
+    File.open("TESTING.txt", "w") { 
+      |f| f.write "#{@friends[1].inspect}" 
+    }
+    send_data 'text to send', :filename => 'TESTING.txt'
   end
 
   private
